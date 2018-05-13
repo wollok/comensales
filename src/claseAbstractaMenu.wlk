@@ -1,17 +1,34 @@
-object ricardo {
 
-	method elegirPlato(menu) {
+class Comensal {
+	
+	
+	method elegirPlato(menu)
+	method elegirBebida(menu)
+	
+	method cuenta(menu) {
+		return self.elegirPlato(menu).precio() + self.elegirBebida(menu).precio()
+	}	
+}
+
+class Ricachon inherits Comensal {
+
+	override method elegirPlato(menu) {
 		return menu.platos().max{ plato => plato.precio() }
 	}
 
-	method elegirBebida(menu) {
+	override method elegirBebida(menu) {
 		return menu.bebidas().max{ bebida => bebida.precio() }
 	}
+}
 
-	method cuenta(menu) {
-		return self.elegirPlato(menu).precio() + self.elegirBebida(menu).precio()
+class Gasolero inherits Comensal {
+	override method elegirPlato(menu) {
+		return menu.platos().min{ plato => plato.precio() }
 	}
 
+	override method elegirBebida(menu) {
+		return menu.bebidas().min{ bebida => bebida.precio() }
+	}
 }
 
 class Menu {

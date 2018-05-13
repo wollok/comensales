@@ -5,23 +5,43 @@ describe "test ricardo" {
 	var menuParrilla = new MenuParrilla()
 	var menuGourmet = new MenuGourmet()
 	var menuMinuta = new MenuMinutas()
+	var ricardo = new Ricachon()
+	var gaston = new Gasolero()
 	
 	
-	test "bebidas" {
+	test "ricardo bebidas" {
 		assert.equals(vino, ricardo.elegirBebida(menuParrilla))
 		assert.equals(vino, ricardo.elegirBebida(menuGourmet))
 		assert.equals(vino, ricardo.elegirBebida(menuMinuta))
 	}
 
-	test "comidas" {
+	test "ricardo comidas" {
 		assert.equals(vacio, ricardo.elegirPlato(menuParrilla))
 		assert.equals(conejo, ricardo.elegirPlato(menuGourmet))
 		assert.equals(milanesa, ricardo.elegirPlato(menuMinuta))
 	}
 	
-	test "cuenta" {
+	test "ricardo cuenta" {
 		assert.equals(220, ricardo.cuenta(menuParrilla))
 		assert.equals(260, ricardo.cuenta(menuGourmet))
 		assert.equals(180, ricardo.cuenta(menuMinuta))
+	}
+	
+	test "gaston bebidas" {
+		assert.equals(agua, gaston.elegirBebida(menuParrilla))
+		assert.equals(agua, gaston.elegirBebida(menuGourmet))
+		assert.equals(agua, gaston.elegirBebida(menuMinuta))
+	}
+
+	test "gaston comidas" {
+		assert.equals(choripan, gaston.elegirPlato(menuParrilla))
+		assert.equals(ensaladaWaldorf, gaston.elegirPlato(menuGourmet))
+		assert.equals(papasFritas, gaston.elegirPlato(menuMinuta))
+	}
+	
+	test "gaston cuenta" {
+		assert.equals(60, gaston.cuenta(menuParrilla))
+		assert.equals(90, gaston.cuenta(menuGourmet))
+		assert.equals(40, gaston.cuenta(menuMinuta))
 	}
 }
