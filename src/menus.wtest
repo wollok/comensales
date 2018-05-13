@@ -2,21 +2,20 @@ import claseAbstractaMenu.*
 
 describe "test ricardo" {
 
-	var menuParrilla = new MenuParrilla()
-	var menuGourmet = new MenuGourmet()
-	var menuMinuta = new MenuMinutas()
-	var ricardo = new Ricachon(propina=0)
-	var gaston = new Gasolero(propina=0)
+	var menuParrilla 
+	var menuMinuta 
+	var ricardo 
 		
 	test "ricardo gasto" {
 		assert.equals(220, ricardo.gasto(menuParrilla))
-		assert.equals(260, ricardo.gasto(menuGourmet))
 		assert.equals(180, ricardo.gasto(menuMinuta))
+//		assert.equals(260, ricardo.gasto(menuGourmet))
 	}
 		
-	test "gaston gasto" {
+/* 	test "gaston gasto" {
 		assert.equals(60, gaston.gasto(menuParrilla))
 		assert.equals(90, gaston.gasto(menuGourmet))
 		assert.equals(40, gaston.gasto(menuMinuta))
-	}
+	} 
+*/
 }
