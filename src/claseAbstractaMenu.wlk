@@ -10,10 +10,9 @@ class Comensal {
 		return cuentaBase * propina
 	}
 	
-	
-	method cuenta(menu) {
-		var cuentaBase = self.elegirPlato(menu).precio() + self.elegirBebida(menu).precio() 
-		return  cuentaBase + self.propina(cuentaBase) 
+	method gasto(menu) {
+		const cuenta = self.elegirPlato(menu).precio() + self.elegirBebida(menu).precio() 
+		return  cuenta + self.propina(cuenta) 
 	}	
 }
 
@@ -40,8 +39,8 @@ class Gasolero inherits Comensal {
 
 class GasoleroPlus inherits Gasolero {
 	
-	override method propina(cuentaBase) {
-		return if (cuentaBase > 80) super(cuentaBase) else 0 
+	override method propina(cuenta) {
+		return if (cuenta > 80) super(cuenta) else 0 
 	}
 }
 
