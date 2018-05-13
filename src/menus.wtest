@@ -1,0 +1,27 @@
+import claseAbstractaMenu.*
+
+describe "test ricardo" {
+
+	var menuParrilla
+	var menuGourmet
+	var menuMinuta 
+	
+	
+	test "bebidas" {
+		assert.equals(vino, ricardo.elegirBebida(menuParrilla))
+		assert.equals(vino, ricardo.elegirBebida(menuGourmet))
+		assert.equals(vino, ricardo.elegirBebida(menuMinuta))
+	}
+
+	test "comidas" {
+		assert.equals(vacio, ricardo.elegirPlato(menuParrilla))
+		assert.equals(conejo, ricardo.elegirPlato(menuGourmet))
+		assert.equals(milanesa, ricardo.elegirPlato(menuMinuta))
+	}
+	
+	test "cuenta" {
+		assert.equals(220, ricardo.cuenta(menuParrilla))
+		assert.equals(260, ricardo.cuenta(menuGourmet))
+		assert.equals(180, ricardo.cuenta(menuMinuta))
+	}
+}
