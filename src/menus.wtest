@@ -5,8 +5,8 @@ describe "test ricardo" {
 	var menuParrilla = new MenuParrilla()
 	var menuGourmet = new MenuGourmet()
 	var menuMinuta = new MenuMinutas()
-	var ricardo = new Ricachon()
-	var gaston = new Gasolero()
+	var ricardo = new Ricachon(propina=0)
+	var gaston = new Gasolero(propina=0)
 	
 	
 	test "ricardo bebidas" {

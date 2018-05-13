@@ -1,12 +1,19 @@
 
 class Comensal {
 	
+	var propina = 0.2
 	
 	method elegirPlato(menu)
 	method elegirBebida(menu)
 	
+	method propina(cuentaBase) {
+		return cuentaBase * propina
+	}
+	
+	
 	method cuenta(menu) {
-		return self.elegirPlato(menu).precio() + self.elegirBebida(menu).precio()
+		var cuentaBase = self.elegirPlato(menu).precio() + self.elegirBebida(menu).precio() 
+		return  cuentaBase + self.propina(cuentaBase) 
 	}	
 }
 
@@ -28,6 +35,13 @@ class Gasolero inherits Comensal {
 
 	override method elegirBebida(menu) {
 		return menu.bebidas().min{ bebida => bebida.precio() }
+	}
+}
+
+class GasoleroPlus inherits Gasolero {
+	
+	override method propina(cuentaBase) {
+		return if (cuentaBase > 80) super(cuentaBase) else 0 
 	}
 }
 
