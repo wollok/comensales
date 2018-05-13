@@ -2,9 +2,9 @@ import claseAbstractaMenu.*
 
 describe "test ricardo" {
 
-	var menuParrilla
-	var menuGourmet
-	var menuMinuta 
+	var menuParrilla = new MenuParrilla()
+	var menuGourmet = new MenuGourmet()
+	var menuMinuta = new MenuMinutas()
 	
 	
 	test "bebidas" {

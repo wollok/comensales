@@ -1,5 +1,53 @@
 object ricardo {
 
+	method elegirPlato(menu) {
+		return menu.platos().max{ plato => plato.precio() }
+	}
+
+	method elegirBebida(menu) {
+		return menu.bebidas().max{ bebida => bebida.precio() }
+	}
+
+	method cuenta(menu) {
+		return self.elegirPlato(menu).precio() + self.elegirBebida(menu).precio()
+	}
+
+}
+
+class Menu {
+
+	method bebidas() {
+		return #{ gaseosa, vino, cerveza, agua }
+	}
+
+}
+
+class MenuParrilla inherits Menu {
+
+	method platos() {
+		return #{ asado, vacio, choripan }
+	}
+
+}
+
+class MenuMinutas inherits Menu {
+
+	method platos() {
+		return #{ milanesa, hamburguesa, papasFritas }
+	}
+
+}
+
+class MenuGourmet inherits Menu {
+
+	method platos() {
+		return #{ sushi, conejo, ensaladaWaldorf }
+	}
+
+	override method bebidas() {
+		return super() + #{ licuado, jugo }
+	}
+
 }
 
 object agua {
