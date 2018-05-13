@@ -82,27 +82,21 @@ class MenuGourmet inherits Menu {
 }
 
 object agua {
-	method esAlcoholica() = false
 	method precio() = 10 
 }
 object vino {
-	method esAlcoholica() = true
 	method precio() = 100
 }
 object cerveza {
-	method esAlcoholica() = true
 	method precio() = 50
 }
 object gaseosa {
-	method esAlcoholica() = false
 	method precio() = 40
 }
 object licuado {
-	method esAlcoholica() = false
 	method precio() = 80
 }
 object jugo {
-	method esAlcoholica() = false
 	method precio() = 40
 }
 
