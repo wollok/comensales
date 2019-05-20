@@ -1,4 +1,7 @@
 # Ejercicio Comensales
+ 
+[![Build Status](https://travis-ci.org/wollok/comensales.svg?branch=master)](https://travis-ci.org/wollok/comensales)
+
 
 ## Menús
 
